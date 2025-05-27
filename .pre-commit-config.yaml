@@ -1,0 +1,23 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks # basic checks: empty lines, spaces, etc.
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: requirements-txt-fixer
+
+  - repo: https://github.com/pycqa/isort # utility / library to sort imports.
+    rev: 6.0.1
+    hooks:
+      - id: isort
+
+  - repo: https://github.com/psf/black # python code formatter
+    rev: 25.1.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/pycqa/flake8 # python linter
+    rev: 6.1.0
+    hooks:
+      - id: flake8
