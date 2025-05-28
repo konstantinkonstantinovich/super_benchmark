@@ -1,5 +1,6 @@
 # Define variables
 DOCKER_COMPOSE = docker compose
+TEST_COMPOSE = docker compose -f docker-compose-tests.yml
 
 .PHONY: setup
 setup: ## Set up env file, pre commit hook and build Docker containers
@@ -11,6 +12,11 @@ setup: ## Set up env file, pre commit hook and build Docker containers
 .PHONY: run
 run: ## Server startup
 	$(DOCKER_COMPOSE) up
+
+.PHONY: test
+test: ## Run tests
+	$(TEST_COMPOSE) build tests
+	$(TEST_COMPOSE) run --rm tests
 
 .PHONY: help
 help: ## Show list of commands

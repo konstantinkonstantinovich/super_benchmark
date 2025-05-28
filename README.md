@@ -14,6 +14,12 @@ After docker and docker compose installed:
 * Run the server `make run`
 * `make help` - list of all commands
 
+## Tests
+To run the tests, use the following command
+```bash
+make test
+```
+
 ## Project resources
 Health check http://0.0.0.0:8000/healthcheck
 API docs http://0.0.0.0:8000/docs
