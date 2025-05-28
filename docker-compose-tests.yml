@@ -1,0 +1,10 @@
+services:
+  tests:
+    build: .
+    command: pytest tests
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.test
